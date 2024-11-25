@@ -1,26 +1,46 @@
+
 <template>
+  <img alt="Tienda logo" src="./assets/logo.png" />
+  <HomePage msg="Bienvenido a EduPets" />
+
+  <!-- <div class="container">
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="general">
+      <ul class="nav" style="background-color: yellow;">
+        <li class="nav-item">
+          <router-link to="/home">Inicio</router-link>  
+        </li>
+        <li class="nav-item">
+          <router-link to="/login">Personaje</router-link>  
+        </li>
+        <li class="nav-item">
+          <router-link to="/registro">Personajes</router-link>  
+        </li>
+        <li class="nav-item">
+          <router-link to="/proveedores">Contacto</router-link>  
+        </li>
+        <li class="nav-item">
+          <router-link to="/proveedores">Contacto</router-link>  
+        </li>
+      </ul>
+      <img :src="imageUrl" alt="Descripción de la imagen" />
+      <router-view />
+    </div>
+  </div> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HomePage from "./views/HomePage.vue";
+ 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HomePage,
+  },
+};
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
