@@ -1,33 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-// Importar las vistas
-import Home from "../views/HomePage.vue";
-import Login from "../views/LoginUsuario.vue";
-import Registro from "../views/Registro.vue";
-import Proveedores from "../views/Proveedores.vue";
-import Productos from "../views/ProductosVarios.vue";
+
+import LoginUsuario from '@/views/LoginUsuario.vue';
+import HomePage from '@/views/HomePage.vue';
+import RegistroUsuario from '@/views/RegistroUsuario.vue';
 
 const routes = [
-    { path: "/", name: "home", component: Home },
-    { path: "/login", name: "login", component: Login },
-    { path: "/registro", name: "registro", component: Registro },
-    { path: "/proveedores", name: "proveedores", component: Proveedores, meta: { requiresAuth: true } },
-    { path: "/productos", name: "productos", component: Productos, meta: { requiresAuth: true } },
-];
+  {
+    path: '/',
+    redirect: '/login'
+  },
+  { path: '/login', name: 'Login', component: LoginUsuario},
+  { path: '/home', name: 'Home', component: HomePage},
+  { path: '/registro', name: 'Registro', component: RegistroUsuario},
+]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
-
-// Redirección si no está autenticado
-router.beforeEach((to, from, next) => {
-    const isAuthenticated = localStorage.getItem("token"); // Simulación de autenticación
-    if (to.meta.requiresAuth && !isAuthenticated) {
-        next("/login");
-    } else {
-        next();
-    }
+  routes
 });
 
 export default router;
