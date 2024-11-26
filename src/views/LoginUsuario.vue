@@ -16,7 +16,7 @@
         <button type="button" class="btn btn-primary w-100" @click="login()">Iniciar Sesión</button>
       </form>
       <hr>
-    <router-link to='/RegistroUsuario' class="btn btn-primary w-100">Registrarse</router-link>
+    <router-link to='/registro' class="btn btn-primary w-100">Registrarse</router-link>
     </div>
    
   </div>
